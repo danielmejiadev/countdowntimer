@@ -1,7 +1,23 @@
 {
   "name": "countdowntimer",
+  "description": "A Countdown Timer application using React Native",
   "version": "0.0.1",
   "private": true,
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielmejiadev/countdowntimer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielmejiadev/countdowntimer/issues"
+  },
+  "homepage": "https://github.com/danielmejiadev/countdowntimer#readme",
+  "keywords": [
+    "React",
+    "React Native",
+    "CountdownTimer",
+    "Hooks"
+  ],
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
