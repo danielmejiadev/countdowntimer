@@ -8,7 +8,7 @@ import { TextProps, Animated, StyleProp, TextStyle } from 'react-native';
 export interface BlinkingTextProps extends TextProps {
   children: string;
   isBlinking: boolean;
-  style: StyleProp<TextStyle>;
+  style?: StyleProp<TextStyle>;
   animationDuration?: number;
 }
 
@@ -50,6 +50,7 @@ export function BlinkingText(props: BlinkingTextProps): React.ReactElement {
  */
 BlinkingText.defaultProps = {
   animationDuration: 250,
+  style: {},
 }
 
 export default BlinkingText;

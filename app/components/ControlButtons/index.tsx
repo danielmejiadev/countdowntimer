@@ -18,10 +18,10 @@ export function ControlButtons() {
   const { isPlaying, isSelecting } = useCountdownState();
 
   const [time, setTime] = React.useState('');
-  const starTimer = () => {
+  const startPlay = React.useCallback(() => {
     startTimer(+time * 60);
     setTime('');
-  };
+  }, [time]);
 
   const Actions = React.useMemo(() => {
     const isValidTime = Number.isInteger(+time) && +time > 0;
@@ -37,7 +37,7 @@ export function ControlButtons() {
             containerStyle={styles.input}
             keyboardType="numeric"
           />
-          <Icon disabled={!isValidTime} name="ios-play" type="ionicon" raised reverse onPress={starTimer} />
+          <Icon disabled={!isValidTime} name="ios-play" type="ionicon" raised reverse onPress={startPlay} />
         </React.Fragment>
       );
     }
