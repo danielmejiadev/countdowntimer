@@ -1,11 +1,9 @@
 // Dependencies
 import React from 'react';
-
 // Context
-import { CountdownContext, CoundownContextType } from "./context";
-
+import { CoundownContextType, CountdownContext } from './context';
 // State
-import { countdownReducer, initialState, CounterdownActionsTypes } from './counterdownReducer';
+import { countdownReducer, CounterdownActionsTypes, initialState } from './counterdownReducer';
 
 /**
  * Creates a countdown state based on reducer.
@@ -29,7 +27,7 @@ export function useCountdownCounter() {
     return () => clearInterval(interval);
   }, [timer]);
 
-  return {...state, remainingTime, dispatch }
+  return { ...state, remainingTime, dispatch }
 }
 
 /**
@@ -37,7 +35,7 @@ export function useCountdownCounter() {
  * @returns State actions.
  */
 export function useCountdownActions() {
-  const { dispatch } = useCountdownState();
+  const { dispatch } = exports.useCountdownState();
   const startTimer = React.useCallback((selectedTime) => dispatch({ type: CounterdownActionsTypes.START, payload: selectedTime }), []);
   const toggleTimer = React.useCallback(() => dispatch({ type: CounterdownActionsTypes.TOGGLE }), []);
   const resetTimer = React.useCallback(() => dispatch({ type: CounterdownActionsTypes.RESET }), []);
